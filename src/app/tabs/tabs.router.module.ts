@@ -1,3 +1,6 @@
+import { PurchaseHistoryPageModule } from './../purchase-history/purchase-history.module';
+import { RonaPageModule } from './../rona/rona.module';
+import { LowesPageModule } from './../lowes/lowes.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
@@ -8,42 +11,78 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'home',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../home/home.module#HomePageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'profile',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../profile/profile.module#ProfilePageModule'
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'stores',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../stores/stores.module#StoresPageModule'
+          }
+        ]
+      },
+      {
+        path: 'offers',
+        children: [
+          {
+            path: '',
+            loadChildren: '../offers/offers.module#OffersPageModule'
+          }
+        ]
+      },
+      {
+        path: 'lowes',
+        children: [
+          {
+            path: '',
+            loadChildren: '../lowes/lowes.module#LowesPageModule'
+          }
+        ]
+      },
+      {
+        path: 'rona',
+        children: [
+          {
+            path: '',
+            loadChildren: '../rona/rona.module#RonaPageModule'
+          }
+        ]
+      },
+      {
+        path: 'pruchase',
+        children: [
+          {
+            path: '',
+            loadChildren: '../purchase-history/purchase-history.module#PurchaseHistoryPageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Purchase History</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/tabs/profile"></ion-back-button>
+    </ion-buttons>
+    
+    <ion-icon name="search" slot="end" size="large" (click)="showSearch()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item lines="full">
+        <div slot="start">
+            <ion-label>Total : $4500</ion-label>
+            <ion-label></ion-label>
+        </div>
+        <div slot="end">
+            <ion-label>Save : $500</ion-label>
+            <ion-label></ion-label>
+        </div>
+    </ion-item>
+  </ion-list>      
+  <ion-list>
+    <ion-item lines="full" *ngFor='let item of ListItem'>
+        <ion-icon name="cart" slot="start"></ion-icon>
+        <div >
+            <ion-label>{{item?.Date}}</ion-label>
+            <ion-label>{{item?.Business}}</ion-label>
+        </div>
+        <div slot="end">
+            <ion-label>{{item?.Sales}}</ion-label>
+            <ion-label> Save: {{item?.Rewards}}</ion-label>
+        </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
